@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import "./style.css";
 import { connect } from "react-redux";
 import * as action from "../../actions";
-import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
+import { Button, Form, FormGroup, Input } from "reactstrap";
+import { saveAs } from "file-saver/FileSaver";
 
 class Editor extends Component {
   constructor(props) {
@@ -18,6 +19,11 @@ class Editor extends Component {
     this.props.mdeState(e.target.value);
   };
 
+  handleSaveFile = e => {
+    let blob = new Blob([this.state.mdedata], { type: "text/plain" });
+    saveAs(blob, "test.md");
+  };
+
   render() {
     return (
       <div className="div_textarea">
@@ -31,6 +37,10 @@ class Editor extends Component {
             />
           </FormGroup>
         </Form>
+        <br />
+        <Button color="primary" onClick={this.handleSaveFile}>
+          Save
+        </Button>
       </div>
     );
   }
