@@ -1,18 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import marked from "marked";
+import ReactMarkdown from "react-markdown";
 import "./style.css";
 
 class View extends Component {
   render() {
     return (
       <div className="div_view">
-        <div
-          className="div_view2"
-          dangerouslySetInnerHTML={{
-            __html: marked(this.props.datas, { sanitize: true })
-          }}
-        />
+        <ReactMarkdown className="div_view2" source={this.props.datas} />
       </div>
     );
   }

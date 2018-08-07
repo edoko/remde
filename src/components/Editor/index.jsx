@@ -21,7 +21,8 @@ text data
 ---
 - dsfadf
 - dsfadfasdf
-    
+
+[ ] a task list item
 `
     };
   }
@@ -56,7 +57,7 @@ text data
         </Form>
         <br />
         <Button color="primary" onClick={this.handleSaveFile}>
-          Save
+          Save file
         </Button>
       </div>
     );
