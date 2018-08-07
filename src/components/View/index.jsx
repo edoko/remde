@@ -6,9 +6,9 @@ import "./style.css";
 class View extends Component {
   render() {
     return (
-      <div>
+      <div className="div_view">
         <div
-          className="div_view"
+          className="div_view2"
           dangerouslySetInnerHTML={{
             __html: marked(this.props.datas, { sanitize: true })
           }}

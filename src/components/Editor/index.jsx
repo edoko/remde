@@ -10,8 +10,24 @@ class Editor extends Component {
     super(props);
 
     this.state = {
-      mdedata: ""
+      mdedata: `
+# Header 1
+## Header 2
+      
+text data
+
+1. dfasf
+2. dsafsdf
+---
+- dsfadf
+- dsfadfasdf
+    
+`
     };
+  }
+
+  componentDidMount() {
+    this.props.mdeState(this.state.mdedata);
   }
 
   handleChange = e => {
@@ -34,6 +50,7 @@ class Editor extends Component {
               name="text"
               className="textarea"
               onChange={this.handleChange}
+              defaultValue={this.state.mdedata}
             />
           </FormGroup>
         </Form>

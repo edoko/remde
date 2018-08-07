@@ -5,6 +5,8 @@ class Header extends Component {
   render() {
     return (
       <div className="header">
+        <br />
+        <br />
         <h1>ReMDe</h1>
         <h3>me@komalab.io</h3>
       </div>
