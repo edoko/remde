@@ -1,5 +1,6 @@
 .div_textarea {
   padding: 20px;
+  text-align: left;
 }
 .textarea {
   min-height: 600px !important;

@@ -5,7 +5,8 @@ import { Provider } from "react-redux";
 import index from "./reducers";
 import App from "./App";
 import "./normalize.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "antd/dist/antd.css";
+import "./style.css";
 
 const stores = createStore(
   index,
