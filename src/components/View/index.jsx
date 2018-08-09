@@ -5,6 +5,14 @@ import "./style.css";
 
 class View extends Component {
   render() {
+    console.log(this.props.states);
+    if (this.props.states === true) {
+      return (
+        <div className="div_view">
+          <ReactMarkdown className="div_view2" source={this.props.content} />
+        </div>
+      );
+    }
     return (
       <div className="div_view">
         <ReactMarkdown className="div_view2" source={this.props.datas} />

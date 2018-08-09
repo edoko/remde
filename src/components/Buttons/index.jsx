@@ -1,12 +1,18 @@
 import React, { Component } from "react";
 import { Button } from "antd";
 import { saveAs } from "file-saver/FileSaver";
+import { connect } from "react-redux";
+import * as actions from "../../actions";
 import "./style.css";
 
 class Buttons extends Component {
   handleSaveFile = e => {
     let blob = new Blob([this.props.mdedata], { type: "text/plain" });
     saveAs(blob, "test.md");
+  };
+
+  handleUpload = () => {
+    this.props.saveContent(this.props.mdedata);
   };
 
   render() {
@@ -19,7 +25,7 @@ class Buttons extends Component {
         >
           Save file
         </Button>
-        <Button type="danger" className="btn_share">
+        <Button type="danger" className="btn_share" onClick={this.handleUpload}>
           Share it
         </Button>
       </div>
@@ -27,4 +33,15 @@ class Buttons extends Component {
   }
 }
 
-export default Buttons;
+const mapDispatchToProps = dispatch => {
+  return {
+    saveContent: content => {
+      dispatch(actions.saveContent(content));
+    }
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Buttons);

@@ -1,7 +1,12 @@
-import { MDE_STATE } from "../actions";
+import {
+  MDE_STATE,
+  SAVE_CONTENT_SUCCESS,
+  FETCH_CONTENT_SUCCESS
+} from "../actions";
 
 const initialState = {
-  datas: ""
+  datas: "",
+  content: ""
 };
 
 export default function data(state = initialState, action) {
@@ -9,6 +14,16 @@ export default function data(state = initialState, action) {
     case MDE_STATE:
       return {
         datas: action.data
+      };
+    case SAVE_CONTENT_SUCCESS:
+      return {
+        ...state,
+        content: action.data
+      };
+    case FETCH_CONTENT_SUCCESS:
+      return {
+        ...state,
+        content: action.data.content
       };
     default:
       return state;
