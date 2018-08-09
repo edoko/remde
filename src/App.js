@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Layout } from "antd";
 import LeftSider from "./components/LeftSider";
-import "./App.css";
 
 const { Content } = Layout;
 
@@ -12,7 +11,7 @@ class App extends Component {
         <Layout>
           <LeftSider />
           <Layout style={{ marginLeft: 200 }}>
-            <Content style={{ margin: "24px 16px 0", overflow: "initial" }}>
+            <Content style={{ margin: "50px 16px", overflow: "initial" }}>
               <div
                 style={{ padding: 24, background: "#fff", textAlign: "center" }}
               >
