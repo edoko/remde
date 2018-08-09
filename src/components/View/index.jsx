@@ -1,15 +1,21 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import ReactMarkdown from "react-markdown";
+import { Button } from "antd";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 import "./style.css";
 
 class View extends Component {
   render() {
-    console.log(this.props.states);
     if (this.props.states === true) {
       return (
         <div className="div_view">
           <ReactMarkdown className="div_view2" source={this.props.content} />
+          <CopyToClipboard
+            text={`http://` + window.location.host + window.location.pathname}
+          >
+            <Button className="btn_copy">Copy Link</Button>
+          </CopyToClipboard>
         </div>
       );
     }
