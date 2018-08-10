@@ -10,6 +10,7 @@
     "history": "^4.7.2",
     "react": "^16.4.2",
     "react-copy-to-clipboard": "^5.0.1",
+    "react-device-detect": "^1.5.9",
     "react-dom": "^16.4.2",
     "react-markdown": "^3.4.1",
     "react-mde": "^5.7.0",

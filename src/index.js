@@ -4,6 +4,8 @@ import { Router, Route } from "react-router-dom";
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
+import { isMobile } from "react-device-detect";
+import Mobile from "./Mobile";
 import index from "./reducers";
 import App from "./App";
 import Content from "./components/Content";
@@ -20,14 +22,18 @@ const stores = createStoreWithMiddleware(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-ReactDOM.render(
-  <Provider store={stores}>
-    <Router history={history}>
-      <App>
-        <Route exact path="/" component={Create} />
-        <Route path="/content/:id" component={Content} />
-      </App>
-    </Router>
-  </Provider>,
-  document.getElementById("root")
-);
+if (isMobile) {
+  ReactDOM.render(<Mobile />, document.getElementById("root"));
+} else {
+  ReactDOM.render(
+    <Provider store={stores}>
+      <Router history={history}>
+        <App>
+          <Route exact path="/" component={Create} />
+          <Route path="/content/:id" component={Content} />
+        </App>
+      </Router>
+    </Provider>,
+    document.getElementById("root")
+  );
+}
