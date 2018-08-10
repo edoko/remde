@@ -1,6 +1,8 @@
 .div_view {
   padding: 20px;
   text-align: left;
+  overflow-y: auto;
+  height: 600px;
 }
 
 .div_view2 {
