@@ -8,7 +8,7 @@ import "./style.css";
 class Buttons extends Component {
   handleSaveFile = e => {
     let blob = new Blob([this.props.mdedata], { type: "text/plain" });
-    saveAs(blob, "test.md");
+    saveAs(blob, "markdown.md");
   };
 
   handleUpload = () => {
