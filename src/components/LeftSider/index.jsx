@@ -27,6 +27,7 @@ class LeftSider extends Component {
               href="https://github.com/edoko/remde"
               style={{ color: "rgba(255, 255, 255, 0.65)" }}
               target="_blank"
+              rel="noopener noreferrer"
             >
               <Icon type="github" />
               Github
@@ -41,7 +42,15 @@ class LeftSider extends Component {
               </span>
             }
           >
-            <Menu.Item key="7">@TypingInsta</Menu.Item>
+            <Menu.Item key="7">
+              <a
+                href="http://typinginsta.me"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                @TypingInsta
+              </a>
+            </Menu.Item>
           </SubMenu>
         </Menu>
       </Sider>
